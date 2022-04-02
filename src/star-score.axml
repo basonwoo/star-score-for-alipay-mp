@@ -1,0 +1,22 @@
+<view>
+  <block a:for="{{stars}}">
+    <image
+      class="star-image" 
+      style="width: {{starWidth}}rpx; height: {{starHeight}}rpx;"
+      src="{{val > item ? (val-item < 1 ? starHeightalf : starFull) : starEmpty}}"
+    >
+      <view
+        class="item" 
+        style="left: 0rpx; width: {{starWidth}}rpx; height: {{starHeight}}rpx;" 
+        data-val="{{item+0.5}}" 
+        onTap="{{disabled ? '' : '_selectHalf'}}"
+      ></view>
+      <view
+        class="item" 
+        style="left: {{starWidth/2}}rpx; width: {{starWidth}}rpx; height: {{starHeight}}rpx;" 
+        data-val="{{item+1}}" 
+        onTap="{{disabled ? '' : '_selectFull'}}"
+      ></view>
+    </image>
+  </block>
+</view>
